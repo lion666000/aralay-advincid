@@ -13,6 +13,10 @@ public class Kniha {
         this.nazev = nazev;
     }
 
+    public String getAutor() {
+        return autor;
+    }
+
     public String toString(){
         return nazev+" "+rokVydani+" "+autor;
     }

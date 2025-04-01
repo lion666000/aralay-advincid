@@ -1,5 +1,7 @@
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class Main {
@@ -9,7 +11,7 @@ public class Main {
 
         ArrayList<Kniha> knihy = new ArrayList<Kniha>();
         while(hajaj){
-            System.out.println("(zadat - zadá knihu, konec - zastavení programu, zmenit - změní název knihy)");
+            System.out.println("(zadat - zadá knihu, konec - zastavení programu, zmenit - změní název knihy, autor - vyhledání knih podle autora)");
             switch(sc.nextLine()){
                 case "zadat":
                     System.out.println("Enter the name of your knihy: ");
@@ -38,6 +40,20 @@ public class Main {
 
                     knihy.get((x-1)).setNazev(nazev);
                     System.out.println(knihy.toString());
+
+                    break;
+                case "autor":
+                    for (Kniha knih : knihy) {
+                        System.out.println("Zadej jméno autora, kterého chceš vyhledat");
+                        String autol = sc.nextLine();
+                        if (knih.getAutor().equals(autol)){
+                            System.out.println(knih.toString());
+                        }
+                    }
+
+                    break;
+                default:
+                    System.err.println("Nemocnici!");
 
                     break;
             }
